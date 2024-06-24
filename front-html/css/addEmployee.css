@@ -126,3 +126,12 @@ button:hover {
   font-weight: bold;
   color: #2575fc;
 }
+.error-message {
+  color: red;
+  font-size: 12px;
+}
+
+.invalid {
+  border-color: red;
+}
+

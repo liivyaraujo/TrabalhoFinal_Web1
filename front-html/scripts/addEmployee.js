@@ -54,3 +54,21 @@ function populateDepartmentsSelect() {
 }
 
 document.addEventListener("DOMContentLoaded", populateDepartmentsSelect);
+
+// Função para validar o email em tempo real
+function validateEmail() {
+  const emailInput = document.getElementById("email");
+  const emailError = document.getElementById("emailError");
+  const email = emailInput.value;
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  if (!emailRegex.test(email)) {
+    emailError.textContent = "Email inválido";
+    emailInput.classList.add("invalid");
+  } else {
+    emailError.textContent = "";
+    emailInput.classList.remove("invalid");
+  }
+}
+
+document.getElementById("email").addEventListener("input", validateEmail);
