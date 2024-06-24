@@ -9,6 +9,17 @@ class DepartmentRepository {
     return rows;
   }
 
+  // adicicionei esse findyBy aqui tbm para que o controller funcione direito :
+
+  async findById(id) {
+    const rows = await db.query(
+      `SELECT id, name, description FROM department WHERE id = ?`,
+      [id]
+    );
+    return rows[0]; // Retorna o primeiro (e único) item do array
+  }
+  //----------------------------------------------------------
+
   async create({ name, description }) {
     const result = await db.query(
       `INSERT INTO department(name, description) VALUES(?, ?)`,
@@ -36,6 +47,13 @@ class DepartmentRepository {
     );
 
     return updatedDepartment[0];
+  }
+
+  // coloquei o DELETE  de departamento aqui
+
+  async delete(id) {
+    const result = await db.query(`DELETE FROM department WHERE id = ?`, [id]);
+    return result.affectedRows > 0;
   }
 }
 

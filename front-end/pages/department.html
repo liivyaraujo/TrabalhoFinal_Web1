@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/department.css" />
+    <title>Departamentos</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th class="col1">Departamentos</th>
+          <th class="col2" colspan="2">Descrição</th>
+        </tr>
+      </thead>
+      <tbody id="departmentTable"></tbody>
+    </table>
+
+    <!--Modal de ter certeza de remover departamento-->
+
+    <div id="confirmModal" class="modal">
+      <div class="modal-content">
+        <p>Tem certeza que deseja remover este departamento?</p>
+        <div class="modal-buttons">
+          <button id="confirmBtn">Remover</button>
+          <button id="cancelBtn">Cancelar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal de erro ao remover departamento  -->
+    <!-- Modal de erro
+    
+   <div id="errorModal" class="modal">
+  <div class="modal-content">
+    <p>Não é possível remover o departamento pois ele possui funcionários associados. Remaneje os funcionários para outro departamento ou remova-os antes de prosseguir.</p>
+    <button id="closeModalBtn">Fechar</button>
+  </div>
+</div> -->
+
+    <!----------------------------arrumar aqui ainda ------------------------------->
+
+    <div class="addDepartamento">
+      <h3>Adicionar novo departamento</h3>
+      <form id="departmentForm">
+        <label for="departmentName">Nome:</label>
+        <input type="text" id="departmentName" name="departmentName" required />
+        <br />
+        <label for="departmentDescription">Descrição:</label>
+        <input
+          type="text"
+          id="departmentDescription"
+          name="departmentDescription"
+          required
+        />
+        <br />
+        <button type="submit">Salvar</button>
+      </form>
+    </div>
+    <script src="../scripts/department.js"></script>
+  </body>
+</html>

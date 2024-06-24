@@ -1,32 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/index.css" />
-    <title>Super Mercado</title>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  </head>
-  <body>
-    <div class="container">
-      <img src="./images/logo.png" class="logo" />
-      <h1>Funcionários do Super Mercado</h1>
-      <table>
-        <thead>
-          <tr>
-            <th class="col1">Nome</th>
-            <th class="col2">Departamento</th>
-            <th class="col3" colspan="2">
-              <a href="./pages/addEmployee.html" class="btn"
-                >Adicionar novo funcionário</a
-              >
-            </th>
-          </tr>
-        </thead>
-        <tbody id="employeeTable"></tbody>
-      </table>
-      <br />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./css/index.css" />
+  <title>Super Mercado</title>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <img src="./images/logo.png" class="logo" />
+    <h1>Funcionários do Super Mercado</h1>
+    <table>
+      <thead>
+        <tr>
+          <th class="col1">Nome</th>
+          <th class="col2">Departamento</th>
+          <th class="col3" colspan="2">
+            <a href="./pages/addEmployee.html" class="btn">Adicionar novo funcionário</a>
+          </th>
+        </tr>
+      </thead>
+      <tbody id="employeeTable"></tbody>
+    </table>
+    <a href="./pages/department.html" class="departamentos">Todos os departamentos</a>
+  </div>
+
+  <!-- Modal -->
+  <div id="confirmationModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <p>Você tem certeza que deseja remover este funcionário?</p>
+      <button id="confirmDelete">Sim, remover</button>
+      <button id="cancelDelete">Cancelar</button>
     </div>
-    <script src="./scripts/script.js"></script>
-  </body>
+  </div>
+
+  <script src="./scripts/index.js"></script>
+</body>
 </html>

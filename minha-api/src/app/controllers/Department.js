@@ -34,6 +34,26 @@ class DepartmentController {
 
     response.status(200).json(updateDepartment);
   }
+  //coloquei o controller do DELETE  de departamento aqui :
+  async delete(request, response) {
+    const { id } = request.params;
+
+    const departmentExists = await DepartmentRepository.findById(id);
+    if (!departmentExists) {
+      return response
+        .status(404)
+        .json({ error: "Departamento não encontrado" });
+    }
+
+    const success = await DepartmentRepository.delete(id);
+    if (success) {
+      response
+        .status(200)
+        .json({ message: "Departamento removido com sucesso" });
+    } else {
+      response.status(500).json({ error: "Erro ao remover departamento" });
+    }
+  }
 }
 
 module.exports = new DepartmentController();

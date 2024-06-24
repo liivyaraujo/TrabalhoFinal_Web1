@@ -16,5 +16,7 @@ routes.delete("/employees/:id", EmployeeController.delete);
 routes.get("/departments", DepartmentController.index);
 routes.post("/departments", DepartmentController.store);
 routes.put("/departments/:id", DepartmentController.update);
+//adicionei a routa de departamento aqui verificar depois: 
+routes.delete("/departments/:id", DepartmentController.delete);
 
 module.exports = routes;
