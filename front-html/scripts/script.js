@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const tdNome = document.createElement('td');
             const link = document.createElement('a');
             link.textContent = employee.name;
-            link.href = `detalhes.html?id=${employee.id}`;
+            link.href = `./pages/employee.html?id=${employee.id}`;
             tdNome.appendChild(link);
   
             const tdDepartamento = document.createElement('td');
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const tdEditar = document.createElement('td');
             const editLink = document.createElement('a');
             editLink.textContent = 'Editar';
-            editLink.href = `editar.html?id=${employee.id}`;
+            editLink.href = `./pages/editEmployee.html?id=${employee.id}`;
             editLink.classList.add('edit-link');
             tdEditar.appendChild(editLink);
 
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
             removeLink.href = `remover.html?id=${employee.id}`;
             removeLink.classList.add('remove-link');
             tdRemover.appendChild(removeLink);
-  
+            
             tr.appendChild(tdNome);
             tr.appendChild(tdDepartamento);
             tr.appendChild(tdEditar);
