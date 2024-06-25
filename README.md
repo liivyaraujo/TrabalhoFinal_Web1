@@ -1,5 +1,5 @@
 # Trabalho final Web1  - Cadastro de funcionários em um supermercado 
-# Alunos: Julia Del Carmen Pascual Andrade, Lívia de Araújo Nunes, Luigi Ledermann Girardi.  
+ Alunos: Julia Del Carmen Pascual Andrade, Lívia de Araújo Nunes, Luigi Ledermann Girardi.  
 
 
 Este é um projeto Node.js que utiliza o [Nodemon](https://nodemon.io/) para reiniciar automaticamente o servidor durante o desenvolvimento.
