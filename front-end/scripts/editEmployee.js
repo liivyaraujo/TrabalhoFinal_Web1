@@ -32,13 +32,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
           departments.forEach((department) => {
             const option = document.createElement("option");
-            option.value = department.name;
+            option.value = department.id; // Usar department.id como valor
             option.textContent = department.name;
-            if (department.name === employee.department_name) {
+            if (department.id === employee.department_id) {
               option.selected = true;
             }
             departmentSelect.appendChild(option);
           });
+
+          // Log para verificar os departamentos carregados
+          console.log("Departamentos carregados:", departments);
         })
         .catch((error) => {
           console.error("Erro ao carregar departamentos:", error);
@@ -48,6 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
       console.error("Erro ao carregar funcionário:", error);
     });
 
+  // Adicionar evento de submit ao formulário
   document
     .getElementById("editForm")
     .addEventListener("submit", function (event) {
@@ -61,14 +65,20 @@ document.addEventListener("DOMContentLoaded", function () {
         hireDate: document.getElementById("hireDate").value,
         transportAllowance:
           document.getElementById("transportAllowance").checked,
-        department_name: document.getElementById("department_name").value,
+        department_id: document.getElementById("department_name").value, // Usar department_id
       };
 
+      // Log para verificar os dados atualizados antes do envio
+      console.log("Dados do funcionário atualizados:", updatedEmployee);
+
+      // Enviar dados atualizados do funcionário
       axios
         .put(`http://localhost:3001/employees/${employeeId}`, updatedEmployee)
         .then((response) => {
           console.log("Funcionário atualizado com sucesso", response.data);
-          // Redirecionar para outra página ou exibir uma mensagem de sucesso
+          const messageElement = document.getElementById("message");
+          messageElement.style.display = 'block';
+          messageElement.textContent = 'Funcionário atualizado com sucesso!';
         })
         .catch((error) => {
           console.error("Erro ao atualizar funcionário:", error);

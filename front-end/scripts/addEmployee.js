@@ -18,11 +18,18 @@ function handleSubmit(event) {
     .post("http://localhost:3001/employees", formData)
     .then((response) => {
       console.log("Dados enviados com sucesso:", response.data);
+      document.getElementById("employeeForm").reset();
+
+      // Exibir a mensagem de sucesso
+      const messageElement = document.getElementById("message");
+      messageElement.style.display = 'block';
+      messageElement.textContent = 'Formulário enviado com sucesso!';
     })
     .catch((error) => {
       console.error("Erro ao enviar dados:", error);
     });
 }
+
 document
   .getElementById("employeeForm")
   .addEventListener("submit", handleSubmit);

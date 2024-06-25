@@ -52,7 +52,14 @@ class DepartmentRepository {
   // coloquei o DELETE  de departamento aqui
 
   async delete(id) {
-    const result = await db.query(`DELETE FROM department WHERE id = ?`, [id]);
+    const result = await db.query(`
+      DELETE FROM department 
+      WHERE id = ? AND NOT EXISTS (
+          SELECT 1 
+          FROM employee 
+          WHERE department_id = ?
+      )
+    `, [id, id]);
     return result.affectedRows > 0;
   }
 }

@@ -11,34 +11,34 @@ document.addEventListener("DOMContentLoaded", function () {
 
         employees.forEach((employee) => {
           const tr = document.createElement("tr");
+            const tdNome = document.createElement("td");
+              const link = document.createElement("a");
+              link.textContent = employee.name;
+              link.href = `./pages/employee.html?id=${employee.id}`;
+              tdNome.appendChild(link);
+            tr.appendChild(tdNome);
 
-          const tdNome = document.createElement("td");
-          const link = document.createElement("a");
-          link.textContent = employee.name;
-          link.href = `./pages/employee.html?id=${employee.id}`;
-          tdNome.appendChild(link);
+            const tdDepartamento = document.createElement("td");
+            tdDepartamento.textContent = employee.department_name;
+            tr.appendChild(tdDepartamento);
 
-          const tdDepartamento = document.createElement("td");
-          tdDepartamento.textContent = employee.department_name;
-
-          const tdEditar = document.createElement("td");
-          const editLink = document.createElement("a");
-          editLink.textContent = "Editar";
-          editLink.href = `./pages/editEmployee.html?id=${employee.id}`;
-          editLink.classList.add("edit-link");
-          tdEditar.appendChild(editLink);
-
-          const tdRemover = document.createElement("td");
-          const removeButton = document.createElement("button");
-          removeButton.textContent = "Remover";
-          removeButton.classList.add("remove-link");
-          removeButton.addEventListener("click", () => showModal(employee.id));
-          tdRemover.appendChild(removeButton);
-
-          tr.appendChild(tdNome);
-          tr.appendChild(tdDepartamento);
-          tr.appendChild(tdEditar);
-          tr.appendChild(tdRemover);
+            const tdBotoes = document.createElement("td");
+              const divBotoes = document.createElement("div");
+              divBotoes.setAttribute( "class", "botoesTd" );
+                const editLink = document.createElement("a");
+                editLink.href = `./pages/editEmployee.html?id=${employee.id}`;
+                  const editBotao = document.createElement("button");
+                  editBotao.textContent = "Editar";
+                  editBotao.setAttribute( "class", "bt-verde" );
+                  editLink.appendChild(editBotao);
+                divBotoes.appendChild(editLink);
+                const removeButton = document.createElement("button");
+                removeButton.textContent = "Remover";
+                removeButton.setAttribute( "class", "bt-vermelho" );
+                removeButton.addEventListener("click", () => showModal(employee.id));
+                divBotoes.appendChild(removeButton);
+              tdBotoes.appendChild(divBotoes);
+            tr.appendChild(tdBotoes);
           tbody.appendChild(tr);
         });
       })
