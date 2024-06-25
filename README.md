@@ -55,29 +55,29 @@ Isso iniciará o servidor e o Nodemon irá monitorar as mudanças nos arquivos p
 
 ### Para navegar no nosso site de cadastro de funcionários de um SuperMercado 
 ## 1. Cadastro de funcionário:
-     Clique em "Adicionar novo funcionário"
-     Preencha as informações necessárias ( Nome, email, cargo, salário, auxílio transporte e depertamento)
-     Clique em "Salvar"
-     Clique em "Voltar" para voltar a página principal
+     Clique em "Adicionar novo funcionário".
+     Preencha as informações necessárias ( Nome, email, cargo, salário, auxílio transporte e depertamento).
+     Clique em "Salvar".
+     Clique em "Voltar" para voltar a página principal.
 
 ## 2. Editar informações de um funcionário:
-    Clique em "Editar" na linha do funcionário específico que se deseja editar as informações
-    Apague o campo do dado a ser editado e reescreva com a nova informação ( Nome, email, cargo, salário, auxílio transporte e depertamento)
-    Clique em "Salvar"
-    Clique em "Voltar" para voltar a página principal
+    Clique em "Editar" na linha do funcionário específico que se deseja editar as informações.
+    Apague o campo do dado a ser editado e reescreva com a nova informação ( Nome, email, cargo, salário, auxílio transporte e depertamento).
+    Clique em "Salvar".
+    Clique em "Voltar" para voltar a página principal.
   
 ## 3. Listar todos os departamentos
-   Clique em "Todos os departamentos"
-   Verifique todos os departamentos cadastrados
+   Clique em "Todos os departamentos".
+   Verifique todos os departamentos cadastrados.
 
 ## 4.Remover departamento 
-   Clique eu "Remover" na linha do departamento que se deseja remover 
+   Clique eu "Remover" na linha do departamento que se deseja remover .
 
 ## 5.Adicionar departamento 
-  Navege com o cursor até "Adicionar novo departamento"
-  Entre com os dados necessários (nome, descrição)
-  Clique em "Salvar" 
-  Clique em "Voltar" para voltar a página principal
+  Navege com o cursor até "Adicionar novo departamento".
+  Entre com os dados necessários (nome, descrição).
+  Clique em "Salvar".
+  Clique em "Voltar" para voltar a página principal.
 
 
 
