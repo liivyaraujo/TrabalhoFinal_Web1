@@ -1,0 +1,53 @@
+:root {
+  --roxo: #a871a7;
+  --roxo-cla: #f5dbf3;
+  --roxo-esc: #965695;
+  --verde: #7bb4a3;
+  --verde-cla: #f1f8f6;
+  --verde-cla2: #f1faf7;
+  --verde-esc: #3a7261;
+  --vermelho: rgb(221, 63, 63);
+  --vermelho-cla: rgb(255, 222, 222);
+  --vermelho-esc: rgb(177, 49, 49);
+  --azul: rgb(72, 94, 218);
+  --preto: #333;
+  --preto-esc: #000;
+  --preto-cla: #e4e4e4;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+.detalhes {
+  margin-top: 20px;
+  border: 3px solid var(--roxo);
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(202, 94, 200, 0.3);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.nomeC{
+  margin-bottom: 10px;
+}
+.nome{
+  color: var(--preto);
+  font-size: 45px;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+}
+.cargo{
+  font-size: 20px;
+  margin-top: 0;
+  margin-bottom: 30px;
+  font-weight: 600;
+  color: var(--roxo-esc);
+}
+p{
+  font-size: 18px;
+}
+strong{
+  color: var(--preto);
+  font-size: 20px;
+}

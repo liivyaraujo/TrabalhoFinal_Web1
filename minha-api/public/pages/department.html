@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/addEmployee.css" />
+    <link rel="stylesheet" href="../css/index.css" />
+    <title>Departamentos</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="logodiv">
+      <img src="../images/logo.png" class="logo" />  
+    </div>
+    <div class="container">
+      <div class="titulo">
+        <h1>Departamentos</h1>
+      </div>
+      <div class="botoes">
+        <a href="../index.html">
+          <button class="bt-preto" style="margin-bottom: 20px; font-size: 18px;">Voltar</button>
+        </a>
+        <button class="bt-verde" id="addModalBtn" style="margin-bottom: 20px;">Adicionar Departamento</button>
+      </div>
+      <div class="tabela">
+        <table>
+          <thead>
+            <tr>
+              <th class="col3">Departamentos</th>
+              <th class="col2">Descrição</th>
+              <th class="col3">Opção</th>
+            </tr>
+          </thead>
+          <tbody id="departmentTable"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div id="confirmModal" class="modal">
+      <div class="modal-content">
+        <p style="font-size: 22px; font-weight: 600; margin-bottom: 10px">Tem certeza que deseja remover este departamento?</p>
+        <div class="modal-buttons">
+          <button class="bt-preto" style="font-size: 18px;" id="cancelBtn">Cancelar</button>
+          <button class="bt-vermelho" id="confirmBtn">Remover</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="addModal" class="modal center-view">
+      <div class="modalContent">
+        <form id="departmentForm">
+          <h3 class="h3modal">Novo departamento</h3>
+          <div class="input-block">
+            <label for="departmentName">Nome:</label>
+            <input 
+            class="input" 
+            type="text" 
+            id="departmentName"
+            placeholder="Digite o nome do departamento" 
+            name="departmentName" 
+            required />
+          </div>
+          <div class="input-block">
+            <label for="departmentDescription">Descrição:</label>
+            <input
+            class="input txtarea"
+            type="text"
+            id="departmentDescription"
+            name="departmentDescription"
+            placeholder="Digite a descrição do departamento"
+            required
+            />
+          </div>
+          <div class="botoes" style="margin-left: 0; margin-bottom: 0;">
+            <button class="bt-preto" style="font-size: 18px; margin-right: 10px;" id="cancelAddBtn">Cancelar</button>
+            <button class="bt-verde" type="submit" id="addBtn">Salvar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="../scripts/department.js"></script>
+  </body>
+</html>

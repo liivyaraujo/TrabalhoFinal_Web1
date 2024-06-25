@@ -1,17 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/index.css" />
-    <title>CrewControl</title>
-  </head>
-  <body>
-    <div class="container">
-      <h1>CrewControl by Prof Lucas.</h1>
-      <span> Somos um software de controle de funcionários </span>
-      <br />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Super Mercado</title>
+  <link rel="stylesheet" href="./css/index.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+  <div class="logodiv">
+    <img src="./images/logo.png" class="logo" />  
+  </div>
+  <div class="container">
+    <div class="titulo">
+      <h1>Funcionários</h1>
     </div>
-    <a href="#" class="btn">CADASTRAR</a>
-  </body>
+    <div class="tabela">
+      <div class="botoes">
+        <a href="./pages/addEmployee.html" class="btn"><button class="bt-verde">
+            Adicionar novo funcionário
+          </button></a>
+        <a href="./pages/department.html" class="departamentos"><button class="bt-roxo">
+            Todos os departamentos
+          </button></a>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th class="col2">Nome</th>
+            <th class="col2">Departamento</th>
+            <th class="col1" colspan="2">Opções</th>
+          </tr>
+        </thead>
+        <tbody id="employeeTable"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="confirmationModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <p style="font-size: 22px; font-weight: 600;">Você tem certeza que deseja remover este funcionário?</p>
+      <button class="bt-vermelho" id="confirmDelete">Sim, remover</button>
+      <button class="bt-preto" id="cancelDelete">Cancelar</button>
+    </div>
+  </div>
+
+  <script src="./scripts/index.js"></script>
+</body>
 </html>
