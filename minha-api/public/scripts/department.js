@@ -62,12 +62,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const cancelBtn = document.getElementById("cancelBtn");
     const confirmBtn = document.getElementById("confirmBtn");
 
-    // Ação ao clicar no botão Cancelar
     cancelBtn.onclick = function () {
       modal.style.display = "none";
     };
-
-    // Ação ao clicar no botão Deletar
     confirmBtn.onclick = function () {
       deleteDepartment(departmentId);
       modal.style.display = "none";

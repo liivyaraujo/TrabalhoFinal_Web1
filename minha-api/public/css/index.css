@@ -327,30 +327,28 @@ tr{
   justify-content: center;
 }
 
-/* Modal container */
 .modal {
-  display: none; /* Escondido por padrão */
-  position: fixed; /* Fica no topo da janela */
-  z-index: 1; /* Fica na frente de outros elementos */
+  display: none;
+  position: fixed; 
+  z-index: 1; 
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  overflow: auto; /* Permite rolar se o conteúdo for maior que a tela */
+  overflow: auto;
   transition: all 0.3s ease;
-  background-color: rgba(0, 0, 0, 0.4); /* Fundo escurecido */
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
-/* Modal content */
 .modal-content {
   background-color: #fefefe;
-  margin: 15% auto; /* 15% do topo e centralizado */
+  margin: 15% auto; 
   padding: 20px;
   border: 1px solid #888;
   border-radius: 16px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
-  width: 80%; /* Largura máxima */
-  max-width: 400px; /* Largura máxima */
+  width: 80%; 
+  max-width: 400px; 
   transition: all 0.3s ease;
   text-align: center;
 }
@@ -361,7 +359,6 @@ tr{
   justify-content: center;
 }
 
-/* Close button */
 .close {
   color: #aaa;
   float: right;

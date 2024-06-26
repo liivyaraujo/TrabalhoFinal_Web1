@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", function () {
     .then((response) => {
       const employee = response.data;
 
-      // Preencher os campos do formulário com os dados do funcionário
       document.getElementById("name").value = employee.name;
       document.getElementById("position").value = employee.position;
       document.getElementById("email").value = employee.email;
@@ -23,7 +22,6 @@ document.addEventListener("DOMContentLoaded", function () {
       document.getElementById("transportAllowance").checked =
         employee.transportAllowance;
 
-      // Buscar e preencher os departamentos no select
       axios
         .get("http://localhost:3001/departments")
         .then((departmentsResponse) => {
@@ -32,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
           departments.forEach((department) => {
             const option = document.createElement("option");
-            option.value = department.id; // Usar department.id como valor
+            option.value = department.id;
             option.textContent = department.name;
             if (department.id === employee.department_id) {
               option.selected = true;
@@ -40,7 +38,6 @@ document.addEventListener("DOMContentLoaded", function () {
             departmentSelect.appendChild(option);
           });
 
-          // Log para verificar os departamentos carregados
           console.log("Departamentos carregados:", departments);
         })
         .catch((error) => {
@@ -51,7 +48,6 @@ document.addEventListener("DOMContentLoaded", function () {
       console.error("Erro ao carregar funcionário:", error);
     });
 
-  // Adicionar evento de submit ao formulário
   document
     .getElementById("editForm")
     .addEventListener("submit", function (event) {
@@ -65,13 +61,11 @@ document.addEventListener("DOMContentLoaded", function () {
         hireDate: document.getElementById("hireDate").value,
         transportAllowance:
           document.getElementById("transportAllowance").checked,
-        department_id: document.getElementById("department_name").value, // Usar department_id
+        department_id: document.getElementById("department_name").value,
       };
 
-      // Log para verificar os dados atualizados antes do envio
       console.log("Dados do funcionário atualizados:", updatedEmployee);
 
-      // Enviar dados atualizados do funcionário
       axios
         .put(`http://localhost:3001/employees/${employeeId}`, updatedEmployee)
         .then((response) => {

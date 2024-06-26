@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
     axios
       .delete(`http://localhost:3001/employees/${currentEmployeeId}`)
       .then(() => {
-        employeeTable(); // Recarrega a tabela de funcionários
+        employeeTable();
         hideModal();
       })
       .catch((error) => {
@@ -71,7 +71,6 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   }
 
-  // Configurar o modal
   document
     .getElementById("confirmDelete")
     .addEventListener("click", removeEmployee);

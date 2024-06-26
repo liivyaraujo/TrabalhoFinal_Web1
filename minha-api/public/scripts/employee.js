@@ -34,6 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <p><strong>Data de Contratação:</strong> ${new Date(
               employee.hireDate
             ).toLocaleDateString()}</p>
+            <p><strong>Auxílio Transporte:</strong> ${employee.transportAllowance ? 'Sim' : 'Não'}</p>
             <p><strong>Departamento:</strong> ${employee.department_name}</p>
           `;
 
